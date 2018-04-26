@@ -1,4 +1,4 @@
-slickr
+frame_per_util
 ======
 
 A collection of python and bash scripts to collect and analyze frame rendering performance in Android apps.
@@ -31,19 +31,19 @@ should do the trick on Unix-like operating systems, or cygwin.
 Scroll for 8 seconds and save the GPU profiling information for the current screen into a file.
 
 ```bash
-$ ./slickr.sh > profile.txt
+$ ./fpu.sh > profile.txt
 ```
 
 Scroll for 8 seconds and display the average frame delay (in milliseconds).
 
 ```bash
-$ ./slickr.sh | ./avg.py
+$ ./fpu.sh | ./avg.py
 ```
 
 Scroll for 8 seconds and plot the recorded data and other metrics.
 
 ```bash
-$ ./slickr.sh | ./plot.py
+$ ./fpu.sh | ./plot.py
 ```
 
 Compare the frame delay histograms and demand curves of two (or more) saved profiles.
@@ -55,7 +55,7 @@ $ ./compare.py profile1.txt profile2.txt
 ## api
 
 ```bash
-$ slickr.sh <package> <iterations> <distance>
+$ fpu.sh <package> <iterations> <distance>
 ```
 
 * `package` is the Java package name for the Android application. For example, for the [Tumblr app](https://play.google.com/store/apps/details?id=com.tumblr), it is `com.tumblr`. It can be gleaned from the play store url for an application.
